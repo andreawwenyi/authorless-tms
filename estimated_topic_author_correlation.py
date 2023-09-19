@@ -180,7 +180,7 @@ if __name__ == '__main__':
         phis = lda_model.get_topics()
         phis = phis / phis.sum(axis=1, keepdims=True)
     elif tool == 'mallet':
-        vocab, vocab_index = get_vocab(args.vocab_fn)
+        vocab, vocab_index = get_vocab(args.vocab_fn, ignore_case=True)
         thetas = get_mallet_thetas(args.doc_topics_fn)
         n_topics = thetas.shape[1]
         phis = get_mallet_phis(args.word_weights_fn, vocab_index, n_topics)

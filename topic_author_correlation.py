@@ -150,7 +150,7 @@ if __name__ == '__main__':
         sys.exit()
     args = parser.parse_args()
 
-    vocab, vocab_index = get_vocab(args.vocab_fn)
+    vocab, vocab_index = get_vocab(args.vocab_fn, ignore_case=True)
     print('Building document-author index')
     authors, author_index, doc_author_ids = get_author_info(args.in_tsv)
     print('Building topic-author-term counts')
